@@ -98,18 +98,35 @@ Flags are made using Wikipedia images
 
 ### Journey through Life
 
+#### Education
+
 - 🏫 Did all of my schooling in San Diego
 - 🎓 Currently a senior
+
+#### Experience
+
 - 🏥 Intern at Palomar Hospital
 - 🧠 Research assistant at an SDSU neuroscience and psychology lab
+
+#### Future Goals
+
 - 🎓 Hope to attend a four-year university, major in biochemistry or neuroscience, and minor in business
 
-### Culture, Family, and Fun
+### Culture
 
 - My ethnicity is Indian.
 - I can speak three languages.
+
+### Family
+
 - I live with my parents and younger brother.
+
+### Fun
+
 - I like to hang out with my friends and cousins, crochet, draw, go on hikes, binge-watch shows or Marvel movies, and volunteer.
+
+### Gallery
+
 - The gallery has pictures of my family, my friends, my hobbies, and fun memories.
 
 <comment>

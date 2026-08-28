@@ -7,7 +7,7 @@ comments: true
 
 ## As a Conversation Starter
 
-Here are two places that are important to me.
+Here are some places that are important to me or that I have visited.
 
 <comment>
 Flags are made using Wikipedia images
@@ -62,6 +62,8 @@ Flags are made using Wikipedia images
     var living_in_the_world = [
         {"flag": "a/a4/Flag_of_the_United_States.svg", "greeting": "Hi", "description": "Born and raised in the USA"},
         {"flag": "4/41/Flag_of_India.svg", "greeting": "Namaste", "description": "Ethnicity, visit every two years"},
+        {"flag": "f/fc/Flag_of_Mexico.svg", "greeting": "Hola", "description": "A place I have visited"},
+        {"flag": "0/07/Flag_of_Dubai.svg", "greeting": "Marhaba", "description": "A place I have visited"},
     ];
 
     // 3a. Consider how to update style count for size of container
@@ -108,18 +110,12 @@ Here are some facts about my journey so far.
 ### Culture, Family, and Fun
 
 - My ethnicity is Indian.
-<<<<<<< HEAD
-- I can speak three languages.
-=======
 - I can speak four languages.
-
-### Family
-
->>>>>>> 035e97c (Update language proficiency in about page)
 - I live with my parents, cousin, and younger brother.
-
 - I like to hang out with my friends and cousins, crochet, draw, go on hikes, binge-watch shows or Marvel movies, and volunteer.
 - The gallery has pictures of my family, friends, hobbies, and fun memories.
+
+### Gallery
 
 <comment>
 Gallery of Pics, scroll to the right for more ...

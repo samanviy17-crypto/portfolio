@@ -33,7 +33,8 @@ comments: true
 ### Family
 
 >>>>>>> 035e97c (Update language proficiency in about page)
-- I live with my parents and younger brother.
+- I live with my parents, cousin, and younger brother.
+
 - I like to hang out with my friends and cousins, crochet, draw, go on hikes, binge-watch shows or Marvel movies, and volunteer.
 
 ### Gallery

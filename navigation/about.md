@@ -35,7 +35,15 @@ The gallery has pictures of my family, friends, hobbies, and fun memories.
 
 <div class="image-gallery">
   <img src="{{ site.baseurl }}/images/about/1.JPG" alt="A fun memory">
-  <img src="{{ site.baseurl }}/images/about/IMG_1606.jpg" alt="A fun memory">
+  <img src="{{ site.baseurl }}/images/about/IMG_2039.JPG" alt="A family memory">
+  <img src="{{ site.baseurl }}/images/about/IMG_2486.JPG" alt="A fun memory with friends">
+  <img src="{{ site.baseurl }}/images/about/IMG_3372.JPG" alt="A fun memory with friends">
+  <img src="{{ site.baseurl }}/images/about/IMG_4321.jpeg" alt="A fun memory">
+  <img src="{{ site.baseurl }}/images/about/IMG_5234.JPG" alt="A family memory">
+  <img src="{{ site.baseurl }}/images/about/IMG_9984.JPEG" alt="A fun memory">
+  <img src="{{ site.baseurl }}/images/about/FullSizeRender_VSCO.jpeg" alt="A favorite memory">
+  <img src="{{ site.baseurl }}/images/about/Screenshot%202026-08-28%20at%209.55.50%E2%80%AFAM.png" alt="One of my hobbies">
+  <img src="{{ site.baseurl }}/images/about/Screenshot%202026-08-28%20at%209.57.09%E2%80%AFAM.png" alt="One of my hobbies">
 </div>
 
 <style>

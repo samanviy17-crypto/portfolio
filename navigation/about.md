@@ -105,7 +105,7 @@ Here are some facts about my journey so far.
 - 🎓 I am currently a senior.
 - 🏥 I intern at Palomar Hospital.
 - 🧠 I intern as a research assistant in a neuroscience and psychology lab at SDSU.
-- 🎓 I hope to attend a four-year university, major in biochemistry or neuroscience, and minor in business.
+- 🎓 I hope to attend a four-year university, major in psychology or neuroscience, and minor in business.
 
 ### Culture, Family, and Fun
 

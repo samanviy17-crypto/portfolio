@@ -112,7 +112,7 @@ Here are some facts about my journey so far.
 - My ethnicity is Indian.
 - I can speak four languages.
 - I live with my parents, cousin, and younger brother.
-- I like to hang out with my friends and cousins, crochet, draw, go on hikes, binge-watch shows or Marvel movies, and volunteer.
+- I like to hang out with my friends and cousins, crochet, sketch, draw, go on hikes, binge-watch shows or Marvel movies, and volunteer.
 - The gallery has pictures of my family, friends, hobbies, and fun memories.
 
 ### Gallery

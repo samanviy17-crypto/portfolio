@@ -101,7 +101,7 @@ Flags are made using Wikipedia images
 
 Here are some facts about my journey so far.
 
-- 🏫 I have done all of my schooling in San Diego.
+- 🏫 I have done all of my schooling in San Diego, California.
 - 🎓 I am currently a senior.
 - 🏥 I intern at Palomar Hospital.
 - 🧠 I intern as a research assistant in a neuroscience and psychology lab at SDSU.

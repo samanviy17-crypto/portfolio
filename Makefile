@@ -32,7 +32,11 @@ KNOWN_TARGETS := \
 	build-registered-projects build-registered-docs build-dev-projects \
 	watch-registered-projects clean-registered-projects watch-dev-projects \
 	list-projects split-courses clean-courses use-minima use-cayman use-yat \
-	use-so-simple use-hydejack watch-rebuild
+	use-so-simple use-hydejack watch-rebuild merge-upstream
+
+# Merge template updates while keeping Samanvi's About page unchanged
+merge-upstream:
+	@./scripts/merge_upstream.sh
 
 ###########################################
 # Capture ORIGINAL CLI Goals
@@ -274,11 +278,11 @@ build: build-current
 # Multi-course file splitting
 split-courses:
 	@echo " ------ Splitting multi-course files... -------"
-	@python3 scripts/split_multi_course_files.py
+	@$(PYTHON) scripts/split_multi_course_files.py
 
 clean-courses:
 	@echo "🧹Cleaning course-specific files..."
-	@python3 scripts/split_multi_course_files.py clean
+	@$(PYTHON) scripts/split_multi_course_files.py clean
 
 # Notebook and DOCX conversion
 convert: $(MARKDOWN_FILES) convert-docx

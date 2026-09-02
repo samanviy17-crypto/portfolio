@@ -98,17 +98,18 @@ cd portfolio
 
 #### Keep Template In Sync (Upstream + Merge)
 
-Add Open Coding Society as an `upstream` remote once, then periodically merge updates.
+Add Open Coding Society as an `upstream` remote once. After that, use the
+protected merge target so template updates become the base code while Samanvi's
+personal About page remains unchanged.
 
 ```bash
 # from your repository root
 git remote add upstream https://github.com/open-coding-society/portfolio.git
 git remote -v
 
-# get latest template updates
-git fetch upstream
-git checkout main
-git merge upstream/main
+# get and merge the latest template updates
+# (commit or stash your work first)
+make merge-upstream
 
 # publish merged updates to your repo
 git push origin main

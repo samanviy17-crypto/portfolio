@@ -1,0 +1,4 @@
+# External packages for the imagined season-table and scoreboard app.
+pandas
+Flask
+# json, datetime, statistics, math, and random are part of Python itself.

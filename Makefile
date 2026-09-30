@@ -2,6 +2,7 @@ HOST ?= localhost
 PORT ?= 4500
 LOG_FILE = /tmp/jekyll$(PORT).log
 PYTHON := venv/bin/python3
+.DEFAULT_GOAL := default
 
 SHELL = /bin/bash -c
 .SHELLFLAGS = -e

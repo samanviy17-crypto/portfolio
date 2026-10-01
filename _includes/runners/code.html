@@ -115,6 +115,7 @@ if (typeof CodeMirror !== 'undefined' && !CodeMirror.modes['pseudocode']) {
 
 <script type="module">
 import { BaseRunner, CodeExecutor, PseudocodeExecutor, RobotExecutor } from '{{site.baseurl}}/assets/js/pages/runners/index.js';
+import { PyodideExecutor } from '{{site.baseurl}}/assets/js/pages/runners/executors/PyodideExecutor.js';
 import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api/config.js';
 
 (function() {
@@ -157,6 +158,11 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
   });
 
   const pseudoExecutor = new PseudocodeExecutor({
+    outputElement: outputDiv,
+    execTimeElement: execTimeSpan,
+  });
+
+  const browserPython = new PyodideExecutor({
     outputElement: outputDiv,
     execTimeElement: execTimeSpan,
   });
@@ -220,6 +226,9 @@ import { pythonURI, javaURI, fetchOptions } from '{{site.baseurl}}/assets/js/api
 
   // Run button logic
   function runCode() {
+    if (langSelect.value === "python" && "{{ page.python_runtime }}" === "browser") {
+      return browserPython.run(editor.getValue());
+    }
     if (langSelect.value === "pseudocode") {
       const src = editor.getValue();
       if (RobotExecutor.detect(src)) return robotExecutor.run(src);

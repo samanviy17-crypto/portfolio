@@ -22,6 +22,14 @@ github_repo: "portfolio"
 baseurl: "/portfolio" 
 future: true
 
+# Notebook conversion writes homework pages into this posts subdirectory.
+defaults:
+  - scope:
+      path: "_posts/lesson_homework"
+      type: posts
+    values:
+      python_runtime: browser
+
 # Build settings
 # --------------
 #

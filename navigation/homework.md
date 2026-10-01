@@ -10,9 +10,9 @@ Completed exercises, explanations, tests, and recorded Python outputs. Each Code
 
 | Assignment | Notebook page |
 | --- | --- |
-| Variables and Assignments | [Open homework]({{site.baseurl}}/lesson_homework/variables-and-assignments/) |
+| 3.01 Variables and Assignments HW | [Open homework]({{site.baseurl}}/lesson_homework/variables-and-assignments/) |
 | 3.02 Data Abstractions HW | [Open homework]({{site.baseurl}}/homework/3-2/) |
-| Math Expressions | [Open homework]({{site.baseurl}}/csp/python/math-expressions/hw) |
+| 3.03 Math Expressions HW | [Open homework]({{site.baseurl}}/csp/python/math-expressions/hw) |
 | 3.04 Strings HW | [Open homework]({{site.baseurl}}/python/strings-intercepters-hw) |
 | 3.05 Boolean Expressions HW | [Open homework]({{site.baseurl}}/python/boolean-hw) |
 | 3.06 Conditionals HW | [Open homework]({{site.baseurl}}/python/conditionals-hw) |
@@ -20,7 +20,7 @@ Completed exercises, explanations, tests, and recorded Python outputs. Each Code
 | 3.08 Iterations HW | [Open homework]({{site.baseurl}}/python/iterations-hw) |
 | 3.09 Developing Algorithms HW | [Open homework]({{site.baseurl}}/python/developing-algorithms-hw) |
 | 3.09 Peppa Maze Algorithm Practice | [Open homework]({{site.baseurl}}/python/peppa-maze-hw) |
-| Lists | [Open homework]({{site.baseurl}}/csp/python/lists/homework/) |
+| 3.11 Lists HW | [Open homework]({{site.baseurl}}/csp/python/lists/homework/) |
 | 3.12 Calling Procedures HW | [Open homework]({{site.baseurl}}/csp/python/calling-procedures/hw) |
 | 3.13 Developing Procedures Practice | [Open homework]({{site.baseurl}}/python/developing-procedures-hw) |
 | 3.14 Libraries HW | [Open homework]({{site.baseurl}}/python/libraries-hw) |

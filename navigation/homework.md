@@ -30,3 +30,19 @@ Completed exercises, explanations, tests, and recorded Python outputs. Each Code
 [Official Python lessons](https://pages.opencodingsociety.com/navigation/py-reference/) · [Formatting reference](https://ishans17321.github.io/portfolio/homework/)
 
 Written answers and execution outputs are included. Classroom participation, peer feedback, and submission through the class portal must reflect the student’s actual work.
+
+
+## SASS Homework
+
+Completed Popcorn Hacks, homework refactors, and interactive UI examples using the official OCS grammar.
+
+| Assignment | Notebook page |
+| --- | --- |
+| OCS Grid Grammar | [Open homework]({{site.baseurl}}/sass/grids-hw/) |
+| OCS SASS Containers Grammar | [Open homework]({{site.baseurl}}/sass/containers-hw/) |
+| OCS Semantic HTML & Typography Grammar | [Open homework]({{site.baseurl}}/sass/typography-hw) |
+| SASS Buttons Grammar | [Open homework]({{site.baseurl}}/sass/buttons-hw/) |
+| SASS Inputs | [Open homework]({{site.baseurl}}/sass/inputs-hw/) |
+| SASS Toggles | [Open homework]({{site.baseurl}}/sass/toggles-hw/) |
+
+[Official SASS lessons](https://pages.opencodingsociety.com/navigation/sass/)

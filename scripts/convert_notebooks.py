@@ -1,4 +1,5 @@
 import glob
+import json
 from nbconvert import MarkdownExporter
 from nbconvert.utils.exceptions import ConversionException
 import os
@@ -56,6 +57,8 @@ Real pair example (Cookie Clicker):
 
 Runner options:
 - autostart: true|false  Auto-runs the game when the runner initializes. Default: false.
+- editor: true          Render a UI_RUNNER HTML cell in the shared editable UI runner.
+- id: <unique-id>       Optional stable ID for an editable UI runner.
 
 Game-runner specific options:
 - hide_edit, width, height, editor_height
@@ -417,6 +420,26 @@ class UiRunner:
 
     def rendered_markup_lines(self) -> list[str]:
         """Build the final HTML/script wrapper markup inserted into rendered markdown."""
+        if self.options.get('editor') is True:
+            # Keep notebook answers as executable %%html, while reusing the site's
+            # existing JS editor and UiExecutor for editable published previews.
+            html_lines = ',\n'.join(json.dumps(line) for line in self.html.splitlines())
+            code = 'outputElement.innerHTML = [\n' + html_lines + '\n].join("\\n");\n'
+            code += self.script
+            # The shared include places code inside a JavaScript template literal.
+            code = code.replace('\\', '\\\\').replace('`', '\\`').replace('${', '\\${')
+            runner_id = self.options.get('id', self.runner_id)
+            autostart = 'true' if self.options.get('autostart', True) else 'false'
+            return [
+                '{% capture notebook_ui_code %}{% raw %}',
+                code,
+                '{% endraw %}{% endcapture %}',
+                '{% include runners/ui.html '
+                f'runner_id={json.dumps(runner_id)} '
+                f'challenge={json.dumps(self.description)} '
+                f'autostart="{autostart}" code=notebook_ui_code %' + '}',
+                '',
+            ]
         return [
             '<div class="ui-runner">',
             self.html,
@@ -900,6 +923,10 @@ def process_ui_runner_cells(notebook, permalink):
             if runner:
                 # Store metadata for later use
                 cell['metadata']['ui_runner'] = runner.to_metadata()
+                if runner.options.get('editor') is True and cell.cell_type == 'code':
+                    # The live preview replaces saved HTML on the published page.
+                    # Keep recorded outputs in the original notebook on disk.
+                    cell.outputs = []
                 runner_index += 1
         
         processed_cells.append(cell)

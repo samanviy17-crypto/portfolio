@@ -1,0 +1,401 @@
+/* Official OCS grammar used by the SASS homework, vendored 2026-09-30 from
+ * https://pages.opencodingsociety.com/assets/css/style.css
+ * Source: https://github.com/Open-Coding-Society/pages (MIT).
+ * Only loaded by SASS homework; existing Python pages are unaffected.
+ * Single-underscore aliases preserve the Typography lesson's spelling.
+ */
+
+.ocs__container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: var(--pref-font-family);
+  color: var(--pref-text-color); }
+
+.ocs__container,
+.ocs__container * {
+  box-sizing: border-box; }
+
+.ocs__grid {
+  width: 100%; }
+
+.ocs__grid-cell {
+  background: var(--panel);
+  border: 1px solid var(--ui-border);
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--pref-text-color); }
+
+.ocs__grid-cell--header {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 20px;
+    background: color-mix(in srgb, var(--pref-accent-color) 12%, var(--panel));
+    border-color: var(--pref-accent-color); }
+
+.ocs__grid-cell--wide {
+    grid-column: span 2; }
+
+.ocs__grid-cell--accent {
+    background: color-mix(in srgb, var(--pref-accent-color) 15%, var(--panel));
+    border-color: var(--pref-accent-color); }
+
+.ocs__grid-cell--muted {
+    background: color-mix(in srgb, var(--pref-text-color) 4%, var(--panel));
+    color: color-mix(in srgb, var(--pref-text-color) 70%, transparent); }
+
+.ocs__grid--standard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; }
+
+@media  (max-width: 768px)  {
+.ocs__grid--standard {
+      grid-template-columns: repeat(2, 1fr); }
+}
+
+.ocs__grid--standard.cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; }
+
+@media  (max-width: 768px)  {
+.ocs__grid--standard.cols-2 {
+        grid-template-columns: repeat(2, 1fr); }
+}
+
+.ocs__grid--standard.cols-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px; }
+
+@media  (max-width: 768px)  {
+.ocs__grid--standard.cols-4 {
+        grid-template-columns: repeat(2, 1fr); }
+}
+
+.ocs__grid--standard .ocs__grid-cell {
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer; }
+
+.ocs__grid--standard .ocs__grid-cell:hover {
+      background: var(--panel-mid);
+      border-color: var(--pref-accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); }
+
+.ocs__grid--standard .ocs__grid-cell:active {
+      transform: scale(0.97); }
+
+.ocs__grid--calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: fit-content;
+  padding: 15px;
+  background: var(--panel);
+  border: 1px solid var(--ui-border);
+  border-radius: 16px; }
+
+@media  (max-width: 768px)  {
+.ocs__grid--calculator {
+      gap: 8px; }
+}
+
+.ocs__grid--calculator .ocs__grid-cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--panel);
+    border: 1px solid var(--ui-border);
+    border-radius: 12px;
+    color: var(--pref-text-color);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    user-select: none;
+    min-width: 60px; }
+
+.ocs__grid--calculator .ocs__grid-cell:hover {
+      background: var(--panel-mid);
+      border-color: var(--pref-accent-color);
+      transform: scale(1.05); }
+
+.ocs__grid--calculator .ocs__grid-cell:active {
+      transform: scale(0.95); }
+
+@media  (max-width: 768px)  {
+.ocs__grid--calculator .ocs__grid-cell {
+        font-size: 16px;
+        border-radius: 10px; }
+}
+
+.ocs__grid--calculator .ocs__grid-cell--accent {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--ui-border);
+      border-radius: 12px;
+      color: var(--pref-text-color);
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      background: var(--pref-accent-color);
+      border-color: var(--pref-accent-color);
+      color: var(--pref-bg-color); }
+
+.ocs__grid--calculator .ocs__grid-cell--accent:hover {
+        background: var(--panel-mid);
+        border-color: var(--pref-accent-color);
+        transform: scale(1.05); }
+
+.ocs__grid--calculator .ocs__grid-cell--accent:active {
+        transform: scale(0.95); }
+
+@media  (max-width: 768px)  {
+.ocs__grid--calculator .ocs__grid-cell--accent {
+          font-size: 16px;
+          border-radius: 10px; }
+}
+
+.ocs__grid--calculator .ocs__grid-cell--accent:hover {
+        opacity: 0.85;
+        transform: scale(1.05); }
+
+.ocs__grid--calculator .ocs__grid-cell--muted {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--panel);
+      border: 1px solid var(--ui-border);
+      border-radius: 12px;
+      color: var(--pref-text-color);
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+      background: var(--panel-mid);
+      border-color: var(--ui-border); }
+
+.ocs__grid--calculator .ocs__grid-cell--muted:hover {
+        background: var(--panel-mid);
+        border-color: var(--pref-accent-color);
+        transform: scale(1.05); }
+
+.ocs__grid--calculator .ocs__grid-cell--muted:active {
+        transform: scale(0.95); }
+
+@media  (max-width: 768px)  {
+.ocs__grid--calculator .ocs__grid-cell--muted {
+          font-size: 16px;
+          border-radius: 10px; }
+}
+
+.ocs__grid--calculator .ocs__grid-cell--wide {
+      grid-column: span 2;
+      aspect-ratio: auto;
+      padding: 0 20px; }
+
+.ocs__table-wrap {
+  width: 100%;
+  overflow-x: auto; }
+
+.ocs__table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--pref-text-color); }
+
+.ocs__table th,
+.ocs__table td {
+    padding: 12px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--ui-border, #333); }
+
+@media  (max-width: 768px)  {
+.ocs__table th,
+.ocs__table td {
+        padding: 10px 6px;
+        font-size: 13px; }
+}
+
+.ocs__table th {
+    color: var(--text-muted, #aaa);
+    font-weight: 600;
+    background: var(--panel-mid, #252525);
+    text-align: left; }
+
+.ocs__table td {
+    color: var(--pref-text-color, #ddd); }
+
+.ocs__table tbody tr {
+    background: var(--panel, #1a1a1a);
+    transition: background 0.2s; }
+
+.ocs__table tbody tr:hover {
+      background: var(--panel-mid, rgba(255, 255, 255, 0.05)); }
+
+.ocs__table tbody tr:nth-child(even) {
+      background: var(--ui-bg, rgba(0, 0, 0, 0.06)); }
+
+.ocs__table tbody tr:nth-child(even):hover {
+      background: var(--panel-mid, rgba(255, 255, 255, 0.05)); }
+
+.ocs__table th,
+.ocs__table td {
+    color: var(--pref-text-color);
+    border-color: var(--ui-border); }
+
+.ocs__table th {
+    background: color-mix(in srgb, var(--pref-accent-color) 12%, var(--panel));
+    color: var(--pref-text-color); }
+
+.ocs__table tbody tr {
+    background: var(--panel); }
+
+.ocs__table tbody tr:nth-child(even) {
+      background: color-mix(in srgb, var(--pref-text-color) 4%, var(--panel)); }
+
+.ocs__table tbody tr:hover,
+.ocs__table tbody tr:nth-child(even):hover {
+      background: color-mix(in srgb, var(--pref-accent-color) 10%, var(--panel)); }
+
+input.ocs__input.small {
+  font-size: 0.8em; }
+
+input.ocs__input.medium {
+  font-size: 1.1em; }
+
+input.ocs__input.large {
+  font-size: 1.5em; }
+
+input.ocs__input.gradient {
+  background-image: linear-gradient(120deg, #1e1e1e 45%, #2a2a2a); }
+
+.ocs__toggle {
+  --ocs-toggle-accent: var(--pref-accent-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--pref-text-color);
+  cursor: pointer; }
+
+.ocs__toggle--green {
+    --ocs-toggle-accent: var(--pref-success-color, var(--pref-accent-color)); }
+
+.ocs__toggle-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0; }
+
+.ocs__toggle-input:checked + .ocs__toggle-track {
+    background: var(--ocs-toggle-accent); }
+
+.ocs__toggle-input:checked + .ocs__toggle-track::before {
+      transform: translateX(23px); }
+
+.ocs__toggle-input:focus-visible + .ocs__toggle-track {
+    outline: 2px solid var(--ocs-toggle-accent);
+    outline-offset: 2px; }
+
+.ocs__toggle-input:disabled ~ .ocs__toggle-track,
+.ocs__toggle-input:disabled ~ .ocs__toggle-label {
+    cursor: not-allowed;
+    opacity: 0.55; }
+
+.ocs__toggle-track {
+  position: relative;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 31px;
+  border-radius: 31px;
+  border: 1px solid var(--ui-border);
+  background: var(--panel-mid);
+  transition: background 0.2s ease; }
+
+.ocs__toggle-track::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--pref-text-color);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--pref-text-color) 25%, transparent);
+    transition: transform 0.2s ease; }
+
+.ocs__toggle-label {
+  user-select: none; }
+
+.ocs__card,
+.ocs_card {
+  background: var(--panel);
+  border: 1px solid var(--ui-border);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--pref-text-color); }
+
+.ocs__section-title,
+.ocs_section-title {
+  margin: 0 0 1rem;
+  color: var(--pref-text-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em; }
+
+.ocs__card > h2.ocs__section-title,
+.ocs__card > h3.ocs__section-title,
+.ocs__container > h2.ocs__section-title,
+.ocs_card > h2.ocs_section-title,
+.ocs_card > h3.ocs_section-title,
+.ocs__container > h2.ocs_section-title {
+  font-size: 0.875rem; }
+
+.ocs__description,
+.ocs_description {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 1.0625rem;
+  line-height: 1.7; }
+
+.ocs__text,
+.ocs_text {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.65; }
+
+.ocs__lead,
+.ocs_lead {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  max-width: 70ch; }
+
+.ocs__callout {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--ui-border);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--pref-text-color) 5%, var(--panel));
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6; }
+
+.ocs__callout a {
+  color: var(--pref-accent-color); }
+
+/* Preserve native hidden-state behavior and checkbox geometry in UI previews. */
+.ui-output .ocs__toggle-input { padding: 0; border: 0; }
+.ui-output [hidden] { display: none !important; }

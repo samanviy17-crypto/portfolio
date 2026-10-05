@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Python Homework
+title: Homework
 permalink: /homework/
 ---
 

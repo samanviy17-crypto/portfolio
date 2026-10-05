@@ -1283,6 +1283,53 @@ def process_custom_cells(notebook, permalink):
     return notebook
 
 
+def prepare_sass_homework(notebook, front_matter):
+    """Arrange the six submissions for the full UI runner publishing pipeline.
+
+    Each reference page was audited separately: all six show stacked editors
+    and outputs with expanded notes. Only change the in-memory publishing copy;
+    notebook answers, saved outputs and directives remain untouched on disk.
+    """
+    profiles = {
+        '/sass/grids-hw': 3,
+        '/sass/containers-hw': 2,
+        '/sass/typography-hw': 2,
+        '/sass/buttons-hw': 5,
+        '/sass/inputs-hw': 3,   # Retain our additional input/submit practice.
+        '/sass/toggles-hw': 4,  # Retain our color and connected-feature exercises.
+    }
+    key = front_matter.get('permalink', '').rstrip('/')
+    if key not in profiles:
+        return
+    front_matter['codemirror'] = True
+    front_matter['toc'] = False  # Avoid repeating every activity above the work.
+    introduction, design_notes, activities = [], [], []
+    cells = notebook.cells
+    index = 0
+    while index < len(cells):
+        cell = cells[index]
+        if cell.cell_type == 'markdown' and cell.source.startswith('<link rel="stylesheet"'):
+            introduction.append(nbformat.v4.new_markdown_cell('## Assignment overview'))
+            introduction.append(cell)
+        elif cell.cell_type == 'markdown' and cell.source.startswith('### Explanation'):
+            cell.source = re.sub(r'^### Explanation[^\n]*', '## Design notes', cell.source, count=1)
+            design_notes.append(cell)
+        elif cell.cell_type == 'code' and index + 1 < len(cells) and cells[index + 1].cell_type == 'markdown' and cells[index + 1].source.startswith('**Notes.**'):
+            # Put the student's existing explanation immediately above its lab.
+            activities.extend([cells[index + 1], cell])
+            index += 1
+        else:
+            if cell.cell_type == 'markdown':
+                cell.source = cell.source.replace('### Browser checks', '## Browser checks', 1)
+                cell.source = cell.source.replace('### Publishing and submission', '## Publishing and submission', 1)
+            activities.append(cell)
+        index += 1
+    notebook.cells = introduction + design_notes + activities
+    count = sum(UiRunner.extract_description(cell.source) is not None for cell in notebook.cells)
+    if count != profiles[key]:
+        raise ConversionException(f'Expected {profiles[key]} preserved SASS activities for {key}; found {count}')
+
+
 # Function to convert the notebook to Markdown with front matter
 def convert_notebook_to_markdown_with_front_matter(notebook_file):
     """Convert one notebook into markdown and prepend YAML front matter."""
@@ -1295,18 +1342,16 @@ def convert_notebook_to_markdown_with_front_matter(notebook_file):
         
         notebook.cells.pop(0)
 
-        # Process custom cells (ID assignment + CODE/UI/GAME runner extraction)
+        prepare_sass_homework(notebook, front_matter)
+        # All homework labs use the existing runner pipeline; Python is unchanged.
         notebook = process_custom_cells(notebook, permalink)
-        
         mermaid_graph = MermaidGraph(mermaid_output_directory)
         mermaid_graph.process_cells(notebook)
         exporter = MarkdownExporter()
         markdown, _ = exporter.from_notebook_node(notebook)
-        markdown = fix_js_code_blocks(markdown) # Fix JS code blocks
-        
-        # Inject code-runner includes (and submit buttons if challenge_submit is enabled)
+        markdown = fix_js_code_blocks(markdown)
         markdown = inject_code_runners(markdown, notebook, front_matter)
-        
+
         front_matter_content = (
             "---\n"
             + "\n".join(f"{key}: {value}" for key, value in front_matter.items())

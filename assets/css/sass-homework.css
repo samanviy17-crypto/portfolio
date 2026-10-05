@@ -399,3 +399,18 @@ input.ocs__input.gradient {
 /* Preserve native hidden-state behavior and checkbox geometry in UI previews. */
 .ui-output .ocs__toggle-input { padding: 0; border: 0; }
 .ui-output [hidden] { display: none !important; }
+
+/* Page spacing for the existing stacked homework editors and live outputs. */
+.ui-runner-container { margin-block: 2rem; }
+.ui-runner-container .ui-output:has(> input.ocs__input) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem 0.75rem;
+}
+.ui-runner-container .ui-output > input.ocs__input { justify-self: start; max-width: 100%; }
+.ui-runner-container .ocs__toggle { display: flex; width: fit-content; margin-block: 1rem; }
+@media (max-width: 600px) {
+  .ui-runner-container .ui-output:has(> input.ocs__input) { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .ui-runner-container .ui-output > input.ocs__input { margin-bottom: 0.75rem; }
+}

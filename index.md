@@ -7,6 +7,10 @@ show_reading_time: false
 
 Hi! My name is Samanvi Yachareni
 
+### CSP 2026–2027
+
+- [AP CSP College Board MCQ Practice Reflections]({{ "/csp/college-board-mcq-practice-reflections/" | relative_url }})
+
 ### Development Environment
 
 
